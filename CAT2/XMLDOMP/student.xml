@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Christ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../RemoteSystemsTempFiles/main.xsd">
+
+<Computer_Science>
+  <Stu-Name> Jeetank </Stu-Name>
+  <Stu-University> Christ </Stu-University>
+  <Stu-Phone> 9876543212 <Stu-Phone>
+  <Stu-Email> Jeetank@christuniversity.in<Stu-Email>
+</Computer_Science>
+
+<Computer_Science>
+  <Stu-Name> Jazz </Stu-Name>
+  <Stu-University> Bhavans </Stu-University>
+  <Stu-Phone> 9876543213 <Stu-Phone>
+  <Stu-Email> Jazz@bvc.in <Stu-Email>
+</Computer_Science>
+
+<Computer_Science>
+  <Stu-Name> Tarun </Stu-Name>
+  <Stu-University> Vansundra </Stu-University>
+  <Stu-Phone> 9753124680 <Stu-Phone>
+  <Stu-Email> Tarun@vdfc.in <Stu-Email>
+</Computer_Science>
+
+</Christ>

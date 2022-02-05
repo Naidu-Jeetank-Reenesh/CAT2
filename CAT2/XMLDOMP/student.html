@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML</title>
+<style>
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}        
+h1 {
+    align-items: center;
+    text-align: center;
+    color: aqua;
+    background-color: black;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1); 
+    margin-left: 25%; 
+}
+
+th,td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: center;
+}
+
+
+button {
+  background-color: black;
+  margin-left: 45%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-color: blanchedalmond;
+  color: cyan;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+} 
+
+</style>
+    <script>
+        var xmlDoc
+        var xmlFile ="student.xml"
+
+        function loadXML()
+        {
+            var xmlReq = new XMLHttpRequest;
+            xmlReq.onreadystatechange = function()
+        {
+            console.log(xmlReq.readyState)
+            if((xmlReq.readyState == 4) && (xmlReq.status == 200))
+        {
+            
+            console.log(xmlReq.readyState)
+
+            xmlDoc = xmlReq.responseXML
+            showTable()
+        }
+        }
+        xmlReq.open('GET',"student.xml", true)
+        xmlReq.send()
+        }
+
+        function showTable() {
+
+            var i;
+
+            var table = "<tr><th>Stu-Name</th><th>Stu-University</th><th>Stu-Phone</th><th>Stu-Email</th>";
+            var x = xmlDoc.getElementsByTagName("Computer_Science")
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("Stu-Name")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Stu-University")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Stu-Phone")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("Stu-Email")[0].childNodes[0].nodeValue + "</td></tr>" ;
+
+            }
+            document.getElementById("tab").innerHTML = table;
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Students</h1>
+    <p><button onclick="loadxml()">Students</button></p>
+
+    <table id="tab" border="1">
+        <tr>
+            <th>Stu-Name</th>
+            <th>Stu-University</th>
+            <th>Stu-Phone</th>
+            <th>Stu-Email</th>
+
+        </tr>
+    </table>
+
+</body>
+
+</html>
